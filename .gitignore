@@ -1,0 +1,33 @@
+# ── Credentials & secrets ──────────────────────────────────────────────────
+.env
+.cookies.json
+*.cookies.json
+.last-notified.json
+
+# ── Sync state (machine-local) ─────────────────────────────────────────────
+.sync-state.json
+sync-health.log
+*.log
+
+# ── macOS ──────────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ── iCloud placeholders (never commit these) ───────────────────────────────
+*.icloud
+
+# ── Personal project content (users keep this local / in iCloud) ───────────
+01-Projects/
+02-Areas/
+03-Resources/
+04-Archive/
+cowork-shared-memory/
+_inbox/
+_skills/claude-chat-folder-access/.cookies.json
