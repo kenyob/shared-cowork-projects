@@ -51,3 +51,22 @@ Shared workspace credentials: see `docs/LOCAL_SETUP.md`.
 ## Agent Coordination
 
 This project uses the workspace multi-agent protocol at `../agents/agent-coordination.md`. Read it at session start for: session-start checklist, territory map, async messaging with Jarvis, and project status files at `../agent-status/`.
+
+<!-- graphify:start -->
+## Code graph (Graphify) — use before reading code
+
+Any agent or LLM: this project has a prebuilt code graph. Querying it costs far fewer tokens than
+grepping and reading files to orient. Skip this section if "$HOME/CodeGraph/Shared-CoWork-Projects/graphify-out/graph.json" does not exist
+(machines without a build).
+
+1. **Session start — refresh** (cached, seconds; 2 workers, memory-guarded, one build at a time),
+   from the Active workspace root: `scripts/codegraph/build-all.sh "Shared-CoWork-Projects"`.
+   Claude Code on rick does this automatically via its SessionStart hook.
+2. **Orient:** `graphify query "<question>" --graph "$HOME/CodeGraph/Shared-CoWork-Projects/graphify-out/graph.json"` — also
+   `graphify explain "<symbol>"` and `graphify path "<A>" "<B>"` with the same `--graph`.
+3. Read or grep files only once the graph has named them.
+
+🔴 Never run `/graphify`, `graphify extract`, or `graphify .` on the workspace root or several
+projects at once — 10+ workers took 15 GB and kernel-panicked rick on 2026-10-22. Details:
+`scripts/codegraph/README.md`.
+<!-- graphify:end -->
