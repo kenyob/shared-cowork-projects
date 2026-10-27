@@ -61,7 +61,8 @@ grepping and reading files to orient. Skip this section if "$HOME/CodeGraph/Shar
 
 1. **Session start — refresh** (cached, seconds; 2 workers, memory-guarded, one build at a time),
    from the Active workspace root: `scripts/codegraph/build-all.sh "Shared-CoWork-Projects"`.
-   Claude Code on rick does this automatically via its SessionStart hook.
+   Run it yourself once per session — only Claude Code on rick has a SessionStart hook that does
+   this automatically; every other harness (Codex, Gemini, Hermes, Cursor…) runs the command above.
 2. **Orient:** `graphify query "<question>" --graph "$HOME/CodeGraph/Shared-CoWork-Projects/graphify-out/graph.json"` — also
    `graphify explain "<symbol>"` and `graphify path "<A>" "<B>"` with the same `--graph`.
 3. Read or grep files only once the graph has named them.
